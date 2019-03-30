@@ -47,7 +47,7 @@ export class MapComponent implements AfterViewInit {
     this.map = this.mapLib.createMap();
 
     this.searchCtrl = this.mapLib.addFuseSearch(this.map);
-    this.mapLib.changeDefaultIconPath("../../../assets/images/");
+    this.mapLib.changeDefaultIconPath("assets/images/");
     this.addBasemaps();
     this.mapLib.addGeolocation();
     this.addLegend();
@@ -65,7 +65,7 @@ export class MapComponent implements AfterViewInit {
       "<a href='https://www.youtube.com/channel/UCGtv2H-JS6ZuzJS5jXqTKmQ?view_as=subscriber' target='_blank'>@sidymbengue</a>"
     );
     const googleStreets = this.mapLib.createABasmapeLayer(
-      "http:s//{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
+      "https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
       true
     );
     const googleHybrid = this.mapLib.createABasmapeLayer(

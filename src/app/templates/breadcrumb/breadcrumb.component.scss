@@ -1,0 +1,13 @@
+.breadcrumb-container {
+  margin-bottom: 1rem;
+  margin-top: 4rem;
+  span,
+  a,
+  mat-icon {
+    font-size: 14px !important;
+    .last-breadcrumb {
+      font-weight: bold;
+      color: #673ab7;
+    }
+  }
+}

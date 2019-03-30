@@ -1,0 +1,110 @@
+<section class="section">
+  <div class="row container">
+    <!-- <div class="col s12 center spinnerContainer" *ngIf="isLoading">
+      <span class="teal-text text-darken-3">chargement en cours...</span>
+      <el-loading-spinner></el-loading-spinner>
+    </div> -->
+    <mat-accordion class="col s12 m3 regs-list">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <h6 class="tab">
+            <img src="https://img.icons8.com/color/50/000000/menu.png" />Régions
+          </h6>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item
+            routerLinkActive="active"
+            class="collection-item"
+            *ngFor="let reg of regs"
+          >
+            <mat-icon mat-list-icon>play_arrow</mat-icon>
+            <p mat-line>
+              <a class="hover-fade" [href]="'/regions/' + reg.id_reg">{{
+                reg.region
+              }}</a>
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <div class="col s12 m9">
+      <h5>
+        <img src="https://img.icons8.com/color/48/000000/gps-receiving.png" />
+        {{ headerText }}
+      </h5>
+      <mat-accordion class="col s12 m12">
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <h6 class="tab">
+              <img
+                src="https://img.icons8.com/color/48/000000/info.png"
+              />Présentation
+            </h6>
+          </mat-expansion-panel-header>
+          <ng-template matExpansionPanelContent>
+            <el-informations
+              [isRegion]="isRegion"
+              [depsList]="depsList"
+              [data]="data"
+              [isCountry]="isCountry"
+            >
+            </el-informations>
+          </ng-template>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <h6 class="tab">
+              <img
+                src="https://img.icons8.com/color/48/000000/statistics.png"
+              />Statistiques
+            </h6>
+          </mat-expansion-panel-header>
+          <ng-template matExpansionPanelContent>
+            <mat-tab-group>
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  <mat-icon>event</mat-icon>
+                  Résultats
+                </ng-template>
+                <el-stats
+                  [chartData]="dataEl2019"
+                  [layoutTitle]="layoutTitle"
+                ></el-stats>
+              </mat-tab>
+            </mat-tab-group>
+          </ng-template>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <mat-accordion class="col s12 m12 map">
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <h6 class="tab">
+            <img
+              height="28"
+              width="28"
+              src="https://img.icons8.com/color/48/000000/apple-map.png"
+            />Map
+          </h6>
+        </mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent>
+          <ng-container
+            *ngIf="isCountry; then country; else reg_deps"
+          ></ng-container>
+          <ng-template #country>
+            <el-map [addRegLayer]="true" [addShowMore]="addShowMore"></el-map>
+          </ng-template>
+          <ng-template #reg_deps>
+            <el-map
+              [addShowMore]="addShowMore"
+              [addRegLayer]="false"
+              [departs]="depsList"
+            ></el-map>
+          </ng-template>
+        </ng-template>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</section>
+<el-footer></el-footer>

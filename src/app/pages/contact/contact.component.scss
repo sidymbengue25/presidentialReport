@@ -1,0 +1,44 @@
+header {
+  background-image: url("../../../assets/images/prez.jpg");
+}
+
+.contact {
+  .ask-buttons {
+    h6 {
+      font-size: 1.1rem !important;
+    }
+    button {
+      margin: 0.9rem;
+      min-width: 46px;
+      line-height: 23px;
+      padding: 0px 2px;
+    }
+  }
+  mat-form-field mat-icon,
+  button mat-icon {
+    width: 1.3rem !important;
+    top: 0.15rem !important;
+    position: relative !important;
+  }
+  .post_btn {
+    margin: 1.5rem 0;
+  }
+  button mat-icon {
+    font-size: 17px;
+    padding-left: 5px;
+  }
+  .mat-form-field {
+    margin-bottom: 2rem;
+    input:focus,
+    input {
+      border-bottom: none !important;
+      box-shadow: none !important;
+      height: 1.2rem !important;
+    }
+    textarea {
+      border-bottom: none !important;
+      box-shadow: none !important;
+      min-height: 1.2rem !important;
+    }
+  }
+}

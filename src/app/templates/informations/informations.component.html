@@ -1,0 +1,110 @@
+<table class="col s12 m11 z-depth-3 offset-m1" *ngIf="data">
+  <tbody>
+    <tr *ngIf="isCountry">
+      <td>
+        Pays
+      </td>
+      <td>
+        <strong>{{ data.country }}</strong>
+      </td>
+    </tr>
+    <tr *ngIf="!isCountry">
+      <td>
+        Région
+      </td>
+      <td>
+        <strong>{{ data.region }}</strong>
+      </td>
+    </tr>
+    <tr *ngIf="isRegion">
+      <td>
+        Départements
+      </td>
+      <td>
+        <mat-list>
+          <mat-list-item
+            routerLinkActive="active"
+            class="collection-item"
+            *ngFor="let dep of depsList"
+          >
+            <mat-icon mat-list-icon>play_arrow</mat-icon>
+            <p mat-line>
+              <a
+                class="hover-fade"
+                [routerLink]="[
+                  '/regions/' + dep.properties.id_reg + '/departements',
+                  dep.properties.id_dep
+                ]"
+                >{{ dep.properties.department }}</a
+              >
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Superficie
+      </td>
+      <td>
+        <strong>{{ superficie }} km²</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Inscrits
+      </td>
+      <td>
+        <strong>{{ data.Inscrits }}</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Votants
+      </td>
+      <td>
+        <strong>{{ data.Votants }}</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Taux-participation
+      </td>
+      <td>
+        <strong>{{ taux_part }}%</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Exprimés
+      </td>
+      <td>
+        <strong>{{ data.Exprimes }}</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Bulletins-Nuls
+      </td>
+      <td>
+        <strong>{{ data.Nuls }}</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Nombre de bureaux
+      </td>
+      <td>
+        <strong>{{ data.Nbre_burea }}</strong>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Gagnant
+      </td>
+      <td>
+        <strong>{{ data.winner }}</strong>
+      </td>
+    </tr>
+  </tbody>
+</table>

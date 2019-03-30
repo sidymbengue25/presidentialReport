@@ -1,0 +1,164 @@
+h1,
+li,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+i {
+  font-size: 15px;
+  padding-right: 5px;
+}
+a {
+  color: #fff;
+}
+@font-face {
+  font-family: "Genericons";
+  src: url("./fonts/genericons-regular-webfont.woff") format("woff"),
+    url("./fonts/genericons-regular-webfont.eot") format("truetype");
+}
+.item-container {
+  margin: 50px auto;
+  width: 90%;
+}
+.acordion {
+  background: #333;
+  width: 100%;
+  min-width: 500px;
+  display: block;
+  list-style-type: none;
+  overflow: hidden;
+  height: 140px;
+  font-size: 0;
+}
+.tab {
+  display: inline-block;
+  background-color: #444;
+  border-right: #333 solid 1px;
+  width: 80px;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  transition: all 0.5s ease-in-out 0.1s;
+  &:hover {
+    width: 270px;
+  }
+  &:hover .social a:before {
+    margin-left: -100px;
+  }
+  &:hover .social a:after {
+    margin-left: 0;
+  }
+  .content {
+    background: #fff;
+    width: 190px;
+    height: 100%;
+    margin-left: 80px;
+    position: relative;
+    padding: 17px 0 0 15px;
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 0.85rem;
+      line-height: 1.4rem;
+      padding-right: 7px;
+    }
+  }
+
+  .social a:before,
+  .social a:after {
+    transition: all 0.5s ease-in-out 0.1s;
+    width: 80px;
+    height: 100%;
+    position: absolute;
+    text-indent: 0;
+    padding-top: 55px;
+    padding-left: 25px;
+    display: block;
+    font: normal 30px Genericons;
+  }
+  .social a:after {
+    font-size: 40px;
+    padding-left: 20px;
+    padding-top: 50px;
+    margin-left: 85px;
+  }
+  /* Add icons */
+  .youtube a:before,
+  .youtube a:after {
+    content: "\f213";
+  }
+  .youtube a:after {
+    background: #ff0000;
+  }
+  .twitter a:before,
+  .twitter a:after {
+    content: "\f202";
+  }
+  .twitter a:after {
+    background: #6dc5dd;
+  }
+  .facebook a:before,
+  .facebook a:after {
+    content: "\f204";
+  }
+  .facebook a:after {
+    background: #3b5998;
+  }
+  .linkedin a:before,
+  .linkedin a:after {
+    content: "\f208";
+  }
+  .linkedin a:after {
+    background: #0089cd;
+  }
+  .instagram a:before,
+  .instagram a:after {
+    content: "\f215";
+  }
+  .instagram a:after {
+    background: #6dc993;
+  }
+  .github a:before,
+  .github a:after {
+    content: "\f200";
+  }
+  .github a:after {
+    background: #6e5494;
+  }
+}
+
+@media (max-width: 950px) {
+  .item-container {
+    width: 70%;
+  }
+  .tabs {
+    display: block;
+    width: 100%;
+    border-bottom: 3px #333 solid;
+  }
+  .acordion {
+    display: block;
+    min-width: 450px;
+    height: auto;
+  }
+  .tab .content {
+    width: 85%;
+  }
+  .tab:hover {
+    width: 100%;
+  }
+}
+@media (max-width: 680px) {
+  .item-container {
+    width: 95%;
+  }
+  .acordion {
+    width: 100%;
+    min-width: 350px;
+  }
+}

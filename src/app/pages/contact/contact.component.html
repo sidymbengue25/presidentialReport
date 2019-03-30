@@ -1,0 +1,96 @@
+<header></header>
+<section class="section">
+  <div class="row container">
+    <h5>
+      <img src="https://img.icons8.com/color/48/000000/collaboration.png" />
+      Nous contacter
+    </h5>
+    <div class="col s12 m12 contact">
+      <div class="col s12 m6">
+        <div class="card-panel  blue-grey darken-3 white-text center">
+          <i class="material-icons">email</i>
+          <h6 class="white-text">Contact-us</h6>
+          <p>
+            Pour toutes informations lièes à nos domaines d'expertise on est
+            ouvert pour vous apporter le plus dont vous avez besoin pour
+            décoller vos activités.
+          </p>
+        </div>
+        <h5><mat-icon>map</mat-icon>Location</h5>
+        <el-location></el-location>
+      </div>
+      <div class="col s12 m6">
+        <div class="card-panel white lighten-2 col s12 m12">
+          <h5><mat-icon>mood</mat-icon>We'll be pleased to hear from you</h5>
+          <form [formGroup]="contactForm" (ngSubmit)="send()" novalidate>
+            <mat-form-field class="col s10 m12">
+              <mat-label> <mat-icon>account_circle</mat-icon>Name </mat-label>
+              <input matInput required formControlName="name" />
+            </mat-form-field>
+            <mat-form-field class="col s10 m12">
+              <mat-label> <mat-icon>mail_outline</mat-icon>Email </mat-label>
+              <input matInput required formControlName="email" />
+            </mat-form-field>
+            <mat-form-field class="col s10 m12">
+              <mat-label> <mat-icon>announcement</mat-icon>Subject </mat-label>
+              <input matInput required formControlName="subject" />
+            </mat-form-field>
+            <mat-form-field class="col s10 m12">
+              <mat-label> <mat-icon>message</mat-icon>Content </mat-label>
+              <textarea
+                cols="30"
+                rows="10"
+                matInput
+                required
+                formControlName="content"
+              ></textarea>
+            </mat-form-field>
+            <!-- <div
+              class="col s8 m8 offset-m2 offset-s2 ask-buttons center"
+              *ngIf="!addAttachmentQuestionAnswered"
+            >
+              <h6>
+                Joindre un fichier ?
+              </h6>
+              <button mat-raised-button color="primary" (click)="yesAdd()">
+                Oui
+              </button>
+              <button mat-raised-button color="accent" (click)="noIdont()">
+                Non.
+              </button>
+            </div>
+            <div class="col s12 m12" *ngIf="addAttachment">
+              <h6 class="grey-text left-align">Charger un fichier</h6>
+              <input type="file" (change)="handleUpload($event)" />
+            </div> -->
+            <div class="col s12 m12 post_btn">
+              <button
+                [disabled]="isLoading || contactForm.invalid"
+                type="submit"
+                mat-raised-button
+                matTooltip="Send the post"
+                color="primary"
+              >
+                Send<mat-icon>send</mat-icon>
+              </button>
+            </div>
+            <div class="col s12 center" *ngIf="isLoading">
+              <span class="purple-text purple-darken-4">
+                Envoie en cours, veuillez patientez ...
+              </span>
+              <el-loading-spinner></el-loading-spinner>
+            </div>
+            <!-- <div class="col s12 center" *ngIf="isUpLoading">
+              <span class="teal-text text-darken-3"
+                >Téléchargement en cours, veuillez patientez ...
+              </span>
+              <el-loading-spinner></el-loading-spinner>
+            </div> -->
+          </form>
+        </div>
+      </div>
+      <el-social-links></el-social-links>
+    </div>
+  </div>
+</section>
+<el-footer></el-footer>

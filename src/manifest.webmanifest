@@ -1,6 +1,6 @@
 {
-  "name": "elect-presid",
-  "short_name": "elect-presid",
+  "name": "electPresid",
+  "short_name": "electPresid",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

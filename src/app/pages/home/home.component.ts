@@ -14,27 +14,27 @@ import { Component, AfterViewInit, OnDestroy, Renderer2 } from "@angular/core";
         background-position: center;
       }
       .macky {
-        background-image: url("../../../assets/images/carousel/macky-sall.jpg");
+        background-image: url("/assets/images/carousel/macky-sall.jpg");
         color: #5d4037 !important;
       }
 
       .idy {
-        background-image: url("../../../assets/images/carousel/idy.jpg");
+        background-image: url("/assets/images/carousel/idy.jpg");
         color: #e64a19 !important;
       }
 
       .sonko {
-        background-image: url("../../../assets/images/carousel/ousmane-sonko.png");
+        background-image: url("/assets/images/carousel/ousmane-sonko.png");
         color: #b71c1c !important;
       }
 
       .issa {
-        background-image: url("../../../assets/images/carousel/el-sall.jpg");
+        background-image: url("/assets/images/carousel/el-sall.jpg");
         color: #1b5e20 !important;
       }
 
       .madicke {
-        background-image: url("../../../assets/images/carousel/madicke.jpg");
+        background-image: url("/assets/images/carousel/madicke.jpg");
         color: #ffff00 !important;
       }
       h2 {

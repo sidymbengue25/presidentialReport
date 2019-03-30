@@ -31,7 +31,7 @@ export class LocationComponent implements OnInit {
     );
 
     this.mapLib.createABasmapeLayer(
-      "http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
+      "https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
       true
     );
   }

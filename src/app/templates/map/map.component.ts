@@ -65,11 +65,11 @@ export class MapComponent implements AfterViewInit {
       "<a href='https://www.youtube.com/channel/UCGtv2H-JS6ZuzJS5jXqTKmQ?view_as=subscriber' target='_blank'>@sidymbengue</a>"
     );
     const googleStreets = this.mapLib.createABasmapeLayer(
-      "http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
+      "http:s//{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
       true
     );
     const googleHybrid = this.mapLib.createABasmapeLayer(
-      "http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}",
+      "https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}",
       false
     );
     const OpenStreetMap = this.mapLib.createOSMBasemap();

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "elect-presid": {
+    "electpresid": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -36,7 +36,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/elect-presid",
+            "outputPath": "dist/electpresid",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -94,19 +94,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "elect-presid:build",
-            "proxyConfig": "proxy.conf.json"
+            "browserTarget": "electpresid:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "elect-presid:build:production"
+              "browserTarget": "electpresid:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "elect-presid:build"
+            "browserTarget": "electpresid:build"
           }
         },
         "test": {
@@ -137,7 +136,7 @@
         }
       }
     },
-    "elect-presid-e2e": {
+    "electpresid-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -146,11 +145,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "elect-presid:serve"
+            "devServerTarget": "electpresid:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "elect-presid:serve:production"
+              "devServerTarget": "electpresid:serve:production"
             }
           }
         },
@@ -164,5 +163,5 @@
       }
     }
   },
-  "defaultProject": "elect-presid"
+  "defaultProject": "electpresid"
 }

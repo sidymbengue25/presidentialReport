@@ -75,10 +75,10 @@ export class MapComponent implements AfterViewInit {
     const OpenStreetMap = this.mapLib.createOSMBasemap();
     this.baseMaps = {
       // tslint:disable-next-line:max-line-length
-      "<div class='layers-control-img'><img src='../../../assets/images/basemaps/googleStreetimage.png'></div>Google Streets": googleStreets,
+      "<div class='layers-control-img'><img src='assets/images/basemaps/googleStreetimage.png'></div>Google Streets": googleStreets,
       // tslint:disable-next-line:max-line-length
-      "<div class='layers-control-img'><img src='../../../assets/images/basemaps/googleHybrid.png'></div> Google Hybrid": googleHybrid,
-      "<div class='layers-control-img'><img src='../../../assets/images/basemaps/osm.png'></div> OpenStreetMap": OpenStreetMap
+      "<div class='layers-control-img'><img src='assets/images/basemaps/googleHybrid.png'></div> Google Hybrid": googleHybrid,
+      "<div class='layers-control-img'><img src='assets/images/basemaps/osm.png'></div> OpenStreetMap": OpenStreetMap
     };
     // this.mapLib.addBasemapControlLayer(this.baseMaps);
   }

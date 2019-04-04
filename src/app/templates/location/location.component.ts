@@ -56,7 +56,7 @@ export class LocationComponent implements OnInit {
             nom: "Open-Technology 4E Inc",
             ceo: "Sidy Mbengue",
             address: "Dakar",
-            logo: "../../../assets/images/logo.png",
+            logo: "assets/images/logo.png",
             created_at: "24 Janvier 2019"
           }
         }

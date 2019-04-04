@@ -34,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: "**",
-    redirectTo: "home"
+    redirectTo: "https://presidentiel2019.github.io/home"
   }
 ];
 

@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build  --prod --base-href 'https://sidymbengue25.github.io/elect-presid-2019/'",
+    "build": "ng build  --prod --base-href https://presidentiel2019.github.io/",
     "test": "ng test",
     "st": "ng serve --host 0.0.0.0",
     "lint": "ng lint",

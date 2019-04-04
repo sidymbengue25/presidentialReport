@@ -48,8 +48,36 @@ body::-webkit-scrollbar-thumb {
   .side-text {
     padding: 0 !important;
   }
-  .leaflet-bottom .leaflet-control {
+  .legend.leaflet-control {
     display: none;
+  }
+  .leaflet-touch {
+    .leaflet-control-layers-toggle {
+      width: 23px !important;
+      height: 23px !important;
+    }
+    .leaflet-fusesearch-control .button {
+      display: none !important;
+    }
+  }
+  .leaflet-left .leaflet-control {
+    margin-left: 2px !important;
+  }
+  .leaflet-top .leaflet-control {
+    margin-top: 6px !important;
+  }
+  .leaflet-bar a {
+    width: 18px !important;
+    height: 19px !important;
+    line-height: 19px !important;
+  }
+  .leaflet-bottom .leaflet-control {
+    margin-bottom: auto;
+    background: #fff;
+    width: 100%;
+  }
+  .leaflet-control-attribution {
+    font-size: 9px !important;
   }
 }
 
@@ -145,7 +173,7 @@ h6.tab {
   }
 }
 .hover-fade {
-  color: #673ab7;
+  color: #998daf;
   &:hover {
     opacity: 0.8;
   }

@@ -1,0 +1,111 @@
+<div class="col s12 m12 item-container">
+  <h5>
+    <img src="https://img.icons8.com/color/48/000000/internet.png" /> Follow us
+    on Social Media
+  </h5>
+  <ng-container *ngIf="!isMobile; else mobile">
+    <ul class="acordion">
+      <li class="tab">
+        <div class="social youtube">
+          <a
+            href="https://www.youtube.com/channel/UCGtv2H-JS6ZuzJS5jXqTKmQ?view_as=subscriber"
+            target="_blank"
+          ></a>
+        </div>
+        <div class="content">
+          <h1>Youtube</h1>
+          <p>Follow us on Youtube for our latest videos and conferencies</p>
+        </div>
+      </li>
+      <li class="tab">
+        <div class="social github">
+          <a href="https://github.com/sidymbengue25" target="_blank">Github</a>
+        </div>
+        <div class="content">
+          <h1>Github</h1>
+          <p>Follow us on GitHub for all open source projects.</p>
+        </div>
+      </li>
+      <li class="tab">
+        <div class="social linkedin">
+          <a
+            href="https://www.linkedin.com/in/sidy-mbengue-a17000143/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+        <div class="content">
+          <h1>LinkedIn</h1>
+          <p>Follow us on LinkedIn for networking and, ...</p>
+        </div>
+      </li>
+      <li class="tab">
+        <div class="social facebook">
+          <a href="https://web.facebook.com/sidyakon" target="_blank"
+            >Facebook</a
+          >
+        </div>
+        <div class="content">
+          <h1>Facebook</h1>
+          <p>
+            Follow us on Facebook to be notified to our new events, meetings,
+            conferencies, ...
+          </p>
+        </div>
+      </li>
+      <li class="tab">
+        <div class="social twitter">
+          <a href="https://twitter.com/mbengue_sidy" target="_blank">Twitter</a>
+        </div>
+        <div class="content">
+          <h1>Twitter</h1>
+          <p>Follow us on Twitter to get notified to all our activities</p>
+        </div>
+      </li>
+      <li class="tab">
+        <div class="social instagram">
+          <a href="https://www.instagram.com/mbenguesidy/?hl=fr" target="_blank"
+            >Instagram</a
+          >
+        </div>
+        <div class="content">
+          <h1>Instagram</h1>
+          <p>Follow us on Instagram for our day life sharing.</p>
+        </div>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-template #mobile>
+    <mat-nav-list>
+      <a href="https://web.facebook.com/sidyakon" target="_blank" mat-list-item>
+        <i class="fab fa-facebook-square"></i>Facebook
+      </a>
+      <a
+        href="https://www.linkedin.com/in/sidy-mbengue-a17000143/"
+        target="_blank"
+        mat-list-item
+      >
+        <i class="fab fa-linkedin"></i>
+        LinkedIn
+      </a>
+      <a href="https://twitter.com/mbengue_sidy" target="_blank" mat-list-item
+        ><i class="fab fa-twitter-square"></i>Twitter
+      </a>
+      <a href="https://github.com/sidymbengue25" target="_blank" mat-list-item
+        ><i class="fab fa-github-square"></i>GitHub
+      </a>
+      <a
+        href="https://www.youtube.com/channel/UCGtv2H-JS6ZuzJS5jXqTKmQ?view_as=subscriber"
+        target="_blank"
+        mat-list-item
+        ><i class="fab fa-youtube-square"></i>Youtube
+      </a>
+      <a
+        href="https://www.instagram.com/mbenguesidy/?hl=fr"
+        target="_blank"
+        mat-list-item
+        ><i class="fab fa-instagram"></i>Instagram
+      </a>
+    </mat-nav-list>
+  </ng-template>
+</div>

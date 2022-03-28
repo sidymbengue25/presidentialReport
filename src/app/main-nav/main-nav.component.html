@@ -1,0 +1,104 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [class.hidden]="!(isHandset$ | async)"
+    fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)"
+  >
+    <!-- <mat-toolbar class="primary">Menu</mat-toolbar> -->
+    <!-- mobile nav -->
+    <mat-nav-list class="mob">
+      <a mat-list-item routerLink="/home" routerLinkActive="active">
+        <mat-icon>home</mat-icon>Accueil
+      </a>
+      <a mat-list-item routerLinkActive="active">
+        <mat-icon>poll</mat-icon>
+        <button mat-button [matMenuTriggerFor]="regsList">
+          Régions
+        </button>
+      </a>
+      <a mat-list-item routerLinkActive="active">
+        <mat-icon>poll</mat-icon>
+        <button mat-button [matMenuTriggerFor]="depsList">
+          Départements
+        </button>
+      </a>
+      <a mat-list-item routerLink="/album" routerLinkActive="active">
+        <mat-icon>collections</mat-icon>Album
+      </a>
+      <a mat-list-item routerLink="/contact-us" routerLinkActive="active">
+        <mat-icon>email</mat-icon>Contacts
+      </a>
+      <a mat-list-item routerLink="/about-us" routerLinkActive="active">
+        <mat-icon>local_library</mat-icon>About-Us
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        class="trigger"
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="(isHandset$ | async)"
+      >
+        <mat-icon aria-label="Side nav toggle icon" class="menu-icon"
+          >menu</mat-icon
+        >
+      </button>
+      <span class="sp">Scrutin Présidentiel 2019 (Sénégal) </span>
+      <span class="spacer"></span>
+      <div *ngIf="!(isHandset$ | async)">
+        <a routerLink="/home" routerLinkActive="active">
+          <mat-icon>home</mat-icon>Accueil
+        </a>
+        <a>
+          <mat-icon>poll</mat-icon>
+          <button mat-button [matMenuTriggerFor]="regsList">
+            Régions
+          </button>
+        </a>
+        <a>
+          <mat-icon>poll</mat-icon>
+          <button mat-button [matMenuTriggerFor]="depsList">
+            Départements
+          </button>
+        </a>
+        <a routerLinkActive="active" routerLink="album">
+          <mat-icon>collections</mat-icon>Album
+        </a>
+        <a routerLinkActive="active" routerLink="/contact-us">
+          <mat-icon>email</mat-icon>Contacts
+        </a>
+        <a routerLinkActive="active" routerLink="about-us">
+          <mat-icon>local_library</mat-icon>About-Us
+        </a>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <mat-menu #regsList="matMenu">
+      <div *ngFor="let reg of regs" routerLinkActive="active">
+        <a class="hover-fade" mat-menu-item [href]="'/regions/' + reg.id_reg">
+          {{ reg.region }}
+        </a>
+      </div>
+    </mat-menu>
+    <mat-menu #depsList="matMenu">
+      <div *ngFor="let dep of deps" routerLinkActive="active">
+        <a
+          class="hover-fade"
+          mat-menu-item
+          [href]="'/regions/' + dep.id_reg + '/departements/' + dep.id_dep"
+        >
+          {{ dep.department }}
+        </a>
+      </div>
+    </mat-menu>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

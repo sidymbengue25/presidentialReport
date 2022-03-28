@@ -1,0 +1,88 @@
+.sidenav-container {
+  height: auto;
+  left: 0 !important;
+  right: 0 !important;
+  top: 64px;
+  overflow: hidden;
+  .sidenav {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    z-index: 9000;
+    height: 100%;
+    .mob {
+      a {
+        font-size: 0.8rem;
+        .mat-icon {
+          margin: 0 7px 0 10px;
+        }
+        &.active {
+          color: #673ab7;
+        }
+      }
+    }
+  }
+  button {
+    width: auto;
+    padding: 0 !important;
+    min-width: 40px !important;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  mat-toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 1500;
+    &:after {
+      content: "";
+      height: 25px;
+    }
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2),
+      0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 5px 10px;
+      .mat-icon {
+        top: 3px;
+        position: relative;
+        right: 5px;
+        height: 13px;
+        width: 16px;
+        font-size: 19px;
+      }
+    }
+    button.trigger {
+      background-color: #673ab7 !important;
+      border: none !important;
+      .mat-icon {
+        top: 0;
+        position: relative;
+        font-size: 2.5rem;
+        color: #fff;
+        margin-right: 5px;
+      }
+    }
+    .spacer {
+      flex: 1 1 auto;
+    }
+  }
+}
+@media (max-width: 599px) {
+  span.sp {
+    font-size: 1rem;
+  }
+  .mat-toolbar-row,
+  .mat-toolbar-single-row {
+    height: 64px;
+  }
+  button {
+    font-weight: normal;
+    font-size: 0.8rem;
+  }
+}

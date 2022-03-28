@@ -1,0 +1,46 @@
+<div class="col s12 m12 breadcrumb-container">
+  <span>
+    <a class="breadcrumb black-text" [routerLink]="'/home'">
+      <mat-icon matTooltip="home"> home</mat-icon>
+    </a>
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </span>
+  <span *ngIf="actifUrl$ && actifUrl$.length >= 2">
+    <a class="breadcrumb black-text" [routerLink]="['/' + actifUrl$[1]]">{{
+      actifUrl$[1]
+    }}</a>
+    <mat-icon>arrow_forward_ios</mat-icon>
+  </span>
+  <span *ngIf="actifUrl$ && actifUrl$.length >= 3">
+    <span *ngIf="actifUrl$.length > 3">
+      <a
+        class="breadcrumb black-text"
+        [routerLink]="['/' + actifUrl$[1] + '/' + actifUrl$[2]]"
+        >{{ actifUrl$[2] }}
+      </a>
+      <mat-icon>arrow_forward_ios</mat-icon>
+    </span>
+    <span *ngIf="actifUrl$.length === 3" class="breadcrumb last-breadcrumb">{{
+      actifUrl$[2]
+    }}</span>
+  </span>
+  <span *ngIf="actifUrl$ && actifUrl$.length >= 4">
+    <span *ngIf="actifUrl$.length > 4">
+      <a
+        class="breadcrumb black-text"
+        [routerLink]="[
+          '/' + actifUrl$[1] + '/' + actifUrl$[2] + '/' + actifUrl$[3]
+        ]"
+      >
+        {{ actifUrl$[3] }}</a
+      >
+      <mat-icon>arrow_forward_ios</mat-icon>
+    </span>
+    <span *ngIf="actifUrl$.length === 4" class="breadcrumb last-breadcrumb">{{
+      actifUrl$[3]
+    }}</span>
+  </span>
+  <span *ngIf="actifUrl$ && actifUrl$.length >= 5">
+    <span class="breadcrumb last-breadcrumb"> {{ actifUrl$[4] }}</span>
+  </span>
+</div>

@@ -7,7 +7,7 @@
     </h5>
     <div class="col s12 m12 contact">
       <div class="col s12 m6">
-        <div class="card-panel blue-grey darken-3 white-text center">
+        <div class="card-panel  blue-grey darken-3 white-text center">
           <i class="material-icons">email</i>
           <h6 class="white-text">Contact-us</h6>
           <p>
@@ -45,11 +45,13 @@
                 formControlName="content"
               ></textarea>
             </mat-form-field>
-            <div
+            <!-- <div
               class="col s8 m8 offset-m2 offset-s2 ask-buttons center"
               *ngIf="!addAttachmentQuestionAnswered"
             >
-              <h6>Joindre un fichier ?</h6>
+              <h6>
+                Joindre un fichier ?
+              </h6>
               <button mat-raised-button color="primary" (click)="yesAdd()">
                 Oui
               </button>
@@ -60,10 +62,10 @@
             <div class="col s12 m12" *ngIf="addAttachment">
               <h6 class="grey-text left-align">Charger un fichier</h6>
               <input type="file" (change)="handleUpload($event)" />
-            </div>
+            </div> -->
             <div class="col s12 m12 post_btn">
               <button
-                [disabled]="isLoading || contactForm.invalid || isUpLoading"
+                [disabled]="isLoading || contactForm.invalid"
                 type="submit"
                 mat-raised-button
                 matTooltip="Send the post"
@@ -73,17 +75,17 @@
               </button>
             </div>
             <div class="col s12 center" *ngIf="isLoading">
-              <span class="teal-text text-darken-3">
+              <span class="purple-text purple-darken-4">
                 Envoie en cours, veuillez patientez ...
               </span>
               <el-loading-spinner></el-loading-spinner>
             </div>
-            <div class="col s12 center" *ngIf="isUpLoading">
+            <!-- <div class="col s12 center" *ngIf="isUpLoading">
               <span class="teal-text text-darken-3"
                 >Téléchargement en cours, veuillez patientez ...
               </span>
               <el-loading-spinner></el-loading-spinner>
-            </div>
+            </div> -->
           </form>
         </div>
       </div>

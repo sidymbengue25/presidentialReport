@@ -15,8 +15,8 @@ import { Component, Input } from "@angular/core";
         z-index: 30;
         overflow: hidden;
       }
-    `
-  ]
+    `,
+  ],
 })
 export class MapComponent implements AfterViewInit {
   private map: any;
@@ -27,7 +27,7 @@ export class MapComponent implements AfterViewInit {
   searchCtrl: any;
   customOptions = {
     bottom: "20px",
-    className: "myCustomPopupPlacement"
+    className: "myCustomPopupPlacement",
   };
   @Input() addShowMore: boolean;
   @Input() addRegLayer: boolean;
@@ -47,7 +47,7 @@ export class MapComponent implements AfterViewInit {
     this.map = this.mapLib.createMap();
 
     this.searchCtrl = this.mapLib.addFuseSearch(this.map);
-    this.mapLib.changeDefaultIconPath("../../../assets/images/");
+    this.mapLib.changeDefaultIconPath("assets/images/");
     this.addBasemaps();
     this.mapLib.addGeolocation();
     this.addLegend();
@@ -65,20 +65,23 @@ export class MapComponent implements AfterViewInit {
       "<a href='https://www.youtube.com/channel/UCGtv2H-JS6ZuzJS5jXqTKmQ?view_as=subscriber' target='_blank'>@sidymbengue</a>"
     );
     const googleStreets = this.mapLib.createABasmapeLayer(
-      "http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
+      "https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
       true
     );
     const googleHybrid = this.mapLib.createABasmapeLayer(
-      "http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}",
+      "https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}",
       false
     );
     const OpenStreetMap = this.mapLib.createOSMBasemap();
     this.baseMaps = {
       // tslint:disable-next-line:max-line-length
-      "<div class='layers-control-img'><img src='../../../assets/images/basemaps/googleStreetimage.png'></div>Google Streets": googleStreets,
+      "<div class='layers-control-img'><img src='assets/images/basemaps/googleStreetimage.png'></div>Google Streets":
+        googleStreets,
       // tslint:disable-next-line:max-line-length
-      "<div class='layers-control-img'><img src='../../../assets/images/basemaps/googleHybrid.png'></div> Google Hybrid": googleHybrid,
-      "<div class='layers-control-img'><img src='../../../assets/images/basemaps/osm.png'></div> OpenStreetMap": OpenStreetMap
+      "<div class='layers-control-img'><img src='assets/images/basemaps/googleHybrid.png'></div> Google Hybrid":
+        googleHybrid,
+      "<div class='layers-control-img'><img src='assets/images/basemaps/osm.png'></div> OpenStreetMap":
+        OpenStreetMap,
     };
     // this.mapLib.addBasemapControlLayer(this.baseMaps);
   }
@@ -86,7 +89,7 @@ export class MapComponent implements AfterViewInit {
   createRegsLayer(regs) {
     const geoJsonData = {
       type: "FeatureCollection",
-      features: regs
+      features: regs,
     };
     this.regsLayer = this.mapLib.createPolygonLayer(
       geoJsonData,
@@ -100,7 +103,7 @@ export class MapComponent implements AfterViewInit {
   createDepsLayer(departs) {
     const geoJsonData = {
       type: "FeatureCollection",
-      features: departs
+      features: departs,
     };
     this.depsLayer = this.mapLib.createPolygonLayer(
       geoJsonData,
@@ -122,19 +125,24 @@ export class MapComponent implements AfterViewInit {
         <h6>Résultats détaillés</h6>
         <ul class="collection">
 
-          <li> Taux-participation : ${Math.round(
-            feature.properties.taux_part * 100
-          ) / 100}%</li>
-          <li> Macky Sall : ${Math.round(feature.properties.Perct_MS * 100) /
-            100}%</li>
-          <li> Idrissa Seck : ${Math.round(feature.properties.Perct_IS * 100) /
-            100}%</li>
-          <li> Ousmane Sonko : ${Math.round(feature.properties.Perct_OS * 100) /
-            100}%</li>
-          <li> El'Hadji Sall : ${Math.round(feature.properties.Perct_ES * 100) /
-            100}%</li>
-          <li> Madické Niang : ${Math.round(feature.properties.Perct_MN * 100) /
-            100}%</li>
+          <li> Taux-participation : ${
+            Math.round(feature.properties.taux_part * 100) / 100
+          }%</li>
+          <li> Macky Sall : ${
+            Math.round(feature.properties.Perct_MS * 100) / 100
+          }%</li>
+          <li> Idrissa Seck : ${
+            Math.round(feature.properties.Perct_IS * 100) / 100
+          }%</li>
+          <li> Ousmane Sonko : ${
+            Math.round(feature.properties.Perct_OS * 100) / 100
+          }%</li>
+          <li> El'Hadji Sall : ${
+            Math.round(feature.properties.Perct_ES * 100) / 100
+          }%</li>
+          <li> Madické Niang : ${
+            Math.round(feature.properties.Perct_MN * 100) / 100
+          }%</li>
         </ul>
       </div>
     `;
@@ -148,9 +156,7 @@ export class MapComponent implements AfterViewInit {
       `;
       if (this.addShowMore) {
         popupContent += `
-        <a href='/regions/${feature.properties.id_reg}/departements/${
-          feature.properties.id_dep
-        }'>Plus d'infos</a>
+        <a href='/regions/${feature.properties.id_reg}/departements/${feature.properties.id_dep}'>Plus d'infos</a>
       </div>
       </div>`;
       } else {
@@ -175,12 +181,12 @@ export class MapComponent implements AfterViewInit {
     }
 
     layer.on({
-      mouseover: e => {
+      mouseover: (e) => {
         this.autoClosePopup = true;
         this.mapLib.highlightFeature(e);
         this.createLabel(feature, layer);
       },
-      mouseout: e => {
+      mouseout: (e) => {
         if (this.addRegLayer) {
           this.regsLayer.resetStyle(e.target);
         }
@@ -191,20 +197,18 @@ export class MapComponent implements AfterViewInit {
           layer.closePopup();
         }
       },
-      click: e => {
+      click: (e) => {
         this.autoClosePopup = false;
         layer.bindPopup(popupContent, this.customOptions);
         layer.openPopup();
-      }
+      },
     });
     // tslint:disable-next-line:semicolon
   };
 
   createLabel(feature, layer) {
     const defLabel = `
-      <div class='col s12 m12'>Candidat qui arrive en tête : <strong>${
-        feature.properties.winner
-      }</strong>
+      <div class='col s12 m12'>Candidat qui arrive en tête : <strong>${feature.properties.winner}</strong>
       </div>
     `;
     let labelContent;
@@ -212,9 +216,7 @@ export class MapComponent implements AfterViewInit {
       labelContent = `
       <div class='customPopup'>
         <h6 class="head">
-         Département de ${feature.properties.department} (${
-        feature.properties.region
-      })
+         Département de ${feature.properties.department} (${feature.properties.region})
         </h6>
         ${defLabel}
       </div>
@@ -228,7 +230,7 @@ export class MapComponent implements AfterViewInit {
     `;
     }
     const popup = new L.Popup({
-      autoPan: false
+      autoPan: false,
     }).setContent(labelContent);
 
     const bounds = layer.getBounds();
@@ -246,7 +248,7 @@ export class MapComponent implements AfterViewInit {
       weight: 1,
       opacity: 1,
       color: "black",
-      fillOpacity: 0.9
+      fillOpacity: 0.9,
     };
   }
 
@@ -261,7 +263,7 @@ export class MapComponent implements AfterViewInit {
         "Idrissa Seck",
         "Ousmane Sonko",
         "Issa Sall",
-        "Madické Niang"
+        "Madické Niang",
       ];
       const labels = ["#c19f63", "#ee5125", "#d50000 ", "#1b5e20", "#ffeb3b"];
 

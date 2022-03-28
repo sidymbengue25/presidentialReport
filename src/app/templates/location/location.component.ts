@@ -8,14 +8,14 @@ import { MapGenerator } from "./../../shared/libs/map.generator";
       #map {
         height: 300px;
       }
-    `
-  ]
+    `,
+  ],
 })
 export class LocationComponent implements OnInit {
   mapLib: MapGenerator;
   customOptions = {
     bottom: "20px",
-    className: "myCustomPopupPlacement"
+    className: "myCustomPopupPlacement",
   };
   map: any;
   entrepriseLayer: any;
@@ -31,14 +31,14 @@ export class LocationComponent implements OnInit {
     );
 
     this.mapLib.createABasmapeLayer(
-      "http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
+      "https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}",
       true
     );
   }
   createLayer(data, icon, iconSize, popup) {
     const geoJSONData = {
       type: "FeatureCollection",
-      features: data
+      features: data,
     };
     return this.mapLib.addPointGeoJSONLayer(geoJSONData, icon, iconSize, popup);
   }
@@ -50,16 +50,16 @@ export class LocationComponent implements OnInit {
           type: "Feature",
           geometry: {
             type: "Point",
-            coordinates: [-17.424561172874, 14.734376244]
+            coordinates: [-17.424561172874, 14.734376244],
           },
           properties: {
             nom: "Open-Technology 4E Inc",
             ceo: "Sidy Mbengue",
             address: "Dakar",
-            logo: "../../../assets/images/logo.png",
-            created_at: "24 Janvier 2019"
-          }
-        }
+            logo: "assets/images/logo.png",
+            created_at: "24 Janvier 2019",
+          },
+        },
       ],
       icon,
       [25, 30],

@@ -14,27 +14,27 @@ import { Component, AfterViewInit, OnDestroy, Renderer2 } from "@angular/core";
         background-position: center;
       }
       .macky {
-        background-image: url("../../../assets/images/carousel/macky-sall.jpg");
+        background-image: url("assets/images/carousel/macky-sall.jpg");
         color: #5d4037 !important;
       }
 
       .idy {
-        background-image: url("../../../assets/images/carousel/idy.jpg");
+        background-image: url("assets/images/carousel/idy.jpg");
         color: #e64a19 !important;
       }
 
       .sonko {
-        background-image: url("../../../assets/images/carousel/ousmane-sonko.png");
+        background-image: url("assets/images/carousel/ousmane-sonko.png");
         color: #b71c1c !important;
       }
 
       .issa {
-        background-image: url("../../../assets/images/carousel/el-sall.jpg");
+        background-image: url("assets/images/carousel/el-sall.jpg");
         color: #1b5e20 !important;
       }
 
       .madicke {
-        background-image: url("../../../assets/images/carousel/madicke.jpg");
+        background-image: url("assets/images/carousel/madicke.jpg");
         color: #ffff00 !important;
       }
       h2 {
@@ -53,8 +53,8 @@ import { Component, AfterViewInit, OnDestroy, Renderer2 } from "@angular/core";
           margin-top: 1rem;
         }
       }
-    `
-  ]
+    `,
+  ],
 })
 export class HomeComponent implements AfterViewInit, OnDestroy {
   data: {} = {
@@ -76,7 +76,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     Perct_OS: 15.27,
     Perct_MN: 1.5,
     Perct_ES: 4.1,
-    taux_part: 67.1
+    taux_part: 67.1,
   };
   carInstances;
   constructor(private renderer: Renderer2) {}
@@ -86,7 +86,6 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   ngOnDestroy() {
     this.carInstances.destroy();
   }
-
   initAlbum() {
     const carouselContainer = this.renderer.selectRootElement(
       ".carousel",
@@ -94,7 +93,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     );
     this.carInstances = M.Carousel.init(carouselContainer, {
       fullWidth: true,
-      indicators: true
+      indicators: true,
     });
   }
 }

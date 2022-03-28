@@ -22,7 +22,11 @@ import { Component } from "@angular/core";
             rgba(139, 130, 183, 0),
             rgba(92, 70, 125, 0.5)
           ),
+<<<<<<< HEAD
           url(../../../../../../assets/images/IA.jpg);
+=======
+          url(assets/images/IA.jpg);
+>>>>>>> 89cb6a382540a3c5ee519a2d32996a25380d4896
       }
     `
   ]

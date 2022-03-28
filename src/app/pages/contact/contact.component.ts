@@ -10,7 +10,11 @@ import { MailService } from "src/app/services/mail.service";
 })
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
+<<<<<<< HEAD
   attachments: object[];
+=======
+  attachment: File;
+>>>>>>> 89cb6a382540a3c5ee519a2d32996a25380d4896
   addAttachment: boolean;
   addAttachmentQuestionAnswered: boolean;
   isLoading: boolean;
@@ -53,21 +57,39 @@ export class ContactComponent implements OnInit {
         subject: this.contactForm.get("subject").value,
         content: this.contactForm.get("content").value
       };
+<<<<<<< HEAD
       if (this.attachments) {
         mail.attachments = this.attachments;
       }
+=======
+      // if (this.attachment) {
+      //   mail.attachment = this.attachment;
+      // }
+>>>>>>> 89cb6a382540a3c5ee519a2d32996a25380d4896
       this.mailService
         .postMail(mail)
         .toPromise()
         .then(success => {
           this.contactForm.reset();
+<<<<<<< HEAD
           this.isLoading = false;
         })
         .catch(err => {
+=======
+          M.toast({ html: "Merci de nous avoir écrit", classes: "green" });
+          this.isLoading = false;
+        })
+        .catch(err => {
+          M.toast({
+            html: "Erreur lors de l'envoi",
+            classes: "materialize-red"
+          });
+>>>>>>> 89cb6a382540a3c5ee519a2d32996a25380d4896
           this.isLoading = false;
         });
     }
   }
+<<<<<<< HEAD
   handleUpload(event) {
     this.isUpLoading = true;
     const file: File = event.target.files[0];
@@ -80,4 +102,13 @@ export class ContactComponent implements OnInit {
     ];
     this.isUpLoading = false;
   }
+=======
+  // handleUpload(event) {
+  //   this.isUpLoading = true;
+  //   const file: File = event.target.files[0];
+
+  //   this.attachment = file;
+  //   this.isUpLoading = false;
+  // }
+>>>>>>> 89cb6a382540a3c5ee519a2d32996a25380d4896
 }
